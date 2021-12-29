@@ -3,12 +3,13 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.projectstreamingonandroid"
-        minSdk 30
-        targetSdk 31
+        applicationId "com.example.livestream"
+        minSdkVersion 24
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
