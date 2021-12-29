@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">ProjectStreamingOnAndroid</string>
+    <string name="app_name">Menu</string>
+    <string name="action_home">Home</string>
+    <string name="action_favorite">Stream</string>
+    <string name="action_info">Info</string>
+    <string name="action_setting">Setting</string>
+    <string name="action_Camera">Live</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
