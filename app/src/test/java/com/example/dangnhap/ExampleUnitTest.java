@@ -1,4 +1,4 @@
-package com.example.projectstreamingonandroid;
+package com.example.dangnhap;
 
 import org.junit.Test;
 
