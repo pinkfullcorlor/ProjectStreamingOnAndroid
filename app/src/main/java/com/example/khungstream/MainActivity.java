@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        VideoView videoView = findViewById(R.id.video_view);
-        String videopath = "android.resource://" + getPackageName() + "/" + R.raw.video;
-        Uri uri = Uri.parse(videopath);
-        videoView.setVideoURI(uri);
-
-        MediaController mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
+//        VideoView videoView = findViewById(R.id.video_view);
+//        String videopath = "android.resource://" + getPackageName() + "/" + R.raw.video;
+//        Uri uri = Uri.parse(videopath);
+//        videoView.setVideoURI(uri);
+//
+//        MediaController mediaController = new MediaController(this);
+//        videoView.setMediaController(mediaController);
+//        mediaController.setAnchorView(videoView);
     }
 }
