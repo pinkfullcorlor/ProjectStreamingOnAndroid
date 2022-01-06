@@ -12,7 +12,9 @@
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerlayouttrangchu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
 
 
         <LinearLayout
@@ -56,14 +58,11 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcvtrangchu"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
-
-                <ImageView
-                    android:id="@+id/imagetest"
-                    android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                </ImageView>
+                </androidx.recyclerview.widget.RecyclerView>
+
+
             </LinearLayout>
 
 
@@ -73,20 +72,23 @@
             android:id="@+id/nvgttrangchu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start">
+            app:headerLayout="@layout/home_picturemenuleft"
+            app:menu="@menu/home_actionmenuleft"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:gravity="bottom">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1234566"
-                android:textSize="25dp">
+                android:layout_weight="0.3"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@color/mauhome">
 
-            </TextView>
-<!--            <ListView-->
-<!--                android:id="@+id/ltvwtrangchu"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-<!--            </ListView>-->
+
+            </LinearLayout>
+
         </com.google.android.material.navigation.NavigationView>
 
     </androidx.drawerlayout.widget.DrawerLayout>

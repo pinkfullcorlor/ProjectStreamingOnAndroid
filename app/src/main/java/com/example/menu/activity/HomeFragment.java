@@ -43,6 +43,7 @@ public class HomeFragment extends Fragment {
 //        Trangchinh();
 
 
+
         viewFlipper = view.findViewById(R.id.vftrangchu);
         ActionViewFlipper(viewFlipper, inflater, container, savedInstanceState);
 
@@ -63,11 +64,7 @@ public class HomeFragment extends Fragment {
 //        Picasso.get().load("https://static2.vieon.vn/vieplay-image/carousel_web_v4/2021/06/29/h7x55cvn_1920x1080-venom_1920_1080.jpg").into(imageTest);
 
         return view;
-
-
-
     }
-
 
 
     private void ActionViewFlipper(ViewFlipper viewFlipper, @NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
@@ -94,6 +91,7 @@ public class HomeFragment extends Fragment {
         viewFlipper.setOutAnimation(animation_slide_out);
 
     }
+
 
 //    private void ActionBar(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 //    {

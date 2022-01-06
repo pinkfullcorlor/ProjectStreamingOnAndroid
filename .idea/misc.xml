@@ -8,9 +8,12 @@
         <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/layout/activity_main.xml" value="0.225" />
         <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/layout/fragment_home.xml" value="0.225" />
         <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/layout/home.xml" value="0.225" />
+        <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/layout/home_menuleft.xml" value="0.225" />
         <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/layout/info.xml" value="0.209375" />
+        <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/layout/recyclerview_home.xml" value="0.225" />
         <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/layout/stream.xml" value="0.25" />
         <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/menu/menu_bottom.xml" value="0.225" />
+        <entry key="..\:/Bai tap IT/Android/Menu/app/src/main/res/menu/menuleft_home.xml" value="0.225" />
       </map>
     </option>
   </component>
