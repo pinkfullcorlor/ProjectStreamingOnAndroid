@@ -14,10 +14,28 @@
         android:background="@color/mauhome">
 
         <ImageView
+            android:background="@drawable/circle"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/anhpink">
+            android:layout_height="130dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo2077xoaphong">
         </ImageView>
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:text="Anh Zĩ Cà Mao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:text="stream2077@gmail.com"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
     </LinearLayout>
 
 
