@@ -1,4 +1,4 @@
-package com.example.projectstreamingonandroid;
+package com.example.searchandview;
 
 import org.junit.Test;
 
