@@ -1,26 +1,110 @@
 package com.example.khungstream;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.net.Uri;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.os.Bundle;
-import android.widget.MediaController;
-import android.widget.VideoView;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
+import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
+import com.google.android.exoplayer2.util.Util;
 
 public class MainActivity extends AppCompatActivity {
+
+    SimpleExoPlayer player;
+    PlayerView playerView;
+    ImageView fullscreenButton;
+    boolean fullscreen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        VideoView videoView = findViewById(R.id.video_view);
-//        String videopath = "android.resource://" + getPackageName() + "/" + R.raw.video;
-//        Uri uri = Uri.parse(videopath);
-//        videoView.setVideoURI(uri);
-//
-//        MediaController mediaController = new MediaController(this);
-//        videoView.setMediaController(mediaController);
-//        mediaController.setAnchorView(videoView);
+        player = ExoPlayerFactory.newSimpleInstance(getApplicationContext());
+
+        playerView = findViewById(R.id.idExoPlayerVIew);
+
+        fullscreenButton = playerView.findViewById(R.id.bt_fullscreen);
+
+        fullscreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(fullscreen) {
+                    fullscreenButton.setImageDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_fulscreen));
+
+                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+
+                    if(getSupportActionBar() != null){
+                        getSupportActionBar().show();
+                    }
+
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) playerView.getLayoutParams();
+                    params.width = params.MATCH_PARENT;
+                    params.height = (int) ( 200 * getApplicationContext().getResources().getDisplayMetrics().density);
+                    playerView.setLayoutParams(params);
+
+                    fullscreen = false;
+                }else{
+                    fullscreenButton.setImageDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.ic_fullscreen_exit));
+
+                    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
+                            |View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            |View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+                    if(getSupportActionBar() != null){
+                        getSupportActionBar().hide();
+                    }
+
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+                    RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) playerView.getLayoutParams();
+                    params.width = params.MATCH_PARENT;
+                    params.height = params.MATCH_PARENT;
+                    playerView.setLayoutParams(params);
+
+                    fullscreen = true;
+                }
+            }
+        });
+
+        playerView.setPlayer(player);
+        playerView.setResizeMode(AspectRatioFrameLayout.RESIZE_MODE_FIXED_HEIGHT);
+
+        DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(getApplicationContext(),Util.getUserAgent(getApplicationContext(),getApplicationContext().getString(R.string.app_name)));
+
+        MediaSource videoSource = new ProgressiveMediaSource.Factory(dataSourceFactory)
+                .createMediaSource(Uri.parse("http://html5videoformatconverter.com/data/images/happyfit2.mp4"));
+
+        player.prepare(videoSource);
+        player.setPlayWhenReady(true);
+
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        player.setPlayWhenReady(false);
+    }
+
+    @Override
+    public void onDestroy() {
+        player.release();
+        super.onDestroy();
+    }
+
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/idExoPlayerVIew"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:controller_layout_id="@layout/custom_controller"
+        app:resize_mode="fill">
+    </com.google.android.exoplayer2.ui.PlayerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ChoVi"
+        android:id="@+id/name2"
+        android:layout_below="@id/idExoPlayerVIew"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ChoVi"
+        android:id="@+id/name3"
+        android:layout_below="@id/name2"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        android:textSize="20dp"/>
+
+</RelativeLayout>
