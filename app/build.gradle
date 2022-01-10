@@ -52,4 +52,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.4.0'
     //for generating default ui of exoplayer
     implementation 'com.google.android.exoplayer:exoplayer-ui:r2.4.0'
+
+    //showmore
+    implementation'com.borjabravo:readmoretextview:2.1.0'
 }
